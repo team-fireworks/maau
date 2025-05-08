@@ -1,0 +1,15 @@
+diff --git a/src/init.luau b/src/init.luau
+index 1dbdc3e..9e05636 100644
+--- a/src/init.luau
++++ b/src/init.luau
+@@ -1,5 +1,5 @@
+-local chalk = require('./chalk')
+-local type = require('./type')
++local chalk = require("@self/chalk")
++local type = require("@self/type")
+ export type StyLer = type.StyLer
+-export type Chalk = type.Chalk 
+-return chalk :: type.Chalk
+\ No newline at end of file
++export type Chalk = type.Chalk
++return chalk :: type.Chalk

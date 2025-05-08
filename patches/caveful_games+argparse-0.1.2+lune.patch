@@ -1,0 +1,32 @@
+diff --git a/src/lib.luau b/src/lib.luau
+index 47690d6..b38f9d4 100644
+--- a/src/lib.luau
++++ b/src/lib.luau
+@@ -1434,7 +1434,7 @@ function ParseState:finalize()
+ end
+ 
+ function ParseState:parse(args)
+-	for _, arg in ipairs(args) do
++	for _, arg in args do
+ 		local plain = true
+ 
+ 		if self.handle_options then
+@@ -1566,13 +1566,11 @@ type Defmode<T> = (self: T, defmode: string) -> T
+ type Init<T> = (self: T, Init: { [number | string]: string }) -> T
+ type Action<T> = (
+ 	self: T,
+-	Action: (args: any?, _: any?, exceptions: any?) -> ()
+-		| "store"
+-		| "store_true"
+-		| "store_false"
+-		| "count"
+-		| "append"
+-		| "concat"
++	Action: (
++		args: any?,
++		_: any?,
++		exceptions: any?
++	) -> () | "store" | "store_true" | "store_false" | "count" | "append" | "concat"
+ ) -> T
+ type Hidden<T> = (self: T, Hidden: boolean) -> T
+ type Argname<T> = (self: T, argname: string | { [number]: string }) -> T
